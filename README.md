@@ -1,5 +1,7 @@
 ## TODO
 
+- [ ] This
+	- [ ] Put configs in this folder and make the output locations symlink to here: this allows the files to be tracked by git
 - [ ] Polybar
 	- [ ] colors!
 	- [ ] better/different icon fonts
