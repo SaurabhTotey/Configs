@@ -1,8 +1,5 @@
 #!/bin/bash
 
-rm -rf configs
-mkdir configs
-
 for module in $(jq -c '.[]' modules.json)
 do
 	name=$(echo $module | jq -r '.name')

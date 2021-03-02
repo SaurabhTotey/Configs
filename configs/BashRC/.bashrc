@@ -1,1 +1,0 @@
-/home/saurabhtotey/.bashrc
