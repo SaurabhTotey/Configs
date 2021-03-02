@@ -1,0 +1,42 @@
+[
+	{
+		"name": "XMonad",
+		"path": "~/.xmonad/"
+	},
+	{
+		"name": "Polybar",
+		"path": "~/.config/polybar/"
+	},
+	{
+		"name": "NeoVim",
+		"path": "~/.config/nvim/"
+	},
+	{
+		"name": "Alacritty",
+		"path": "~/.config/alacritty/"
+	},
+	{
+		"name": "Tmux",
+		"path": "~/.tmux.conf"
+	},
+	{
+		"name": "Scripts",
+		"path": "/usr/local/bin/"
+	},
+	{
+		"name": "BashRC",
+		"path": "~/.bashrc"
+	},
+	{
+		"name": "XinitRC",
+		"path": "~/.xinitrc"
+	},
+	{
+		"name": "Firefox",
+		"path": "~/.mozilla/firefox/wuzrzfy6.default-release-1610551887284/chrome/"
+	},
+	{
+		"name": "GitConfig",
+		"path": "~/.gitconfig"
+	}
+]
