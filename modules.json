@@ -17,7 +17,7 @@
 	},
 	{
 		"name": "Tmux",
-		"path": "~/.tmux.conf"
+		"path": "~/"
 	},
 	{
 		"name": "Scripts",
@@ -25,11 +25,11 @@
 	},
 	{
 		"name": "BashRC",
-		"path": "~/.bashrc"
+		"path": "~/"
 	},
 	{
 		"name": "XinitRC",
-		"path": "~/.xinitrc"
+		"path": "~/"
 	},
 	{
 		"name": "Firefox",
@@ -37,6 +37,6 @@
 	},
 	{
 		"name": "GitConfig",
-		"path": "~/.gitconfig"
+		"path": "~/"
 	}
 ]

@@ -7,10 +7,8 @@ do
 	source_path=${source_path_string/#~/$HOME}
 	target_path=configs/$name
 	if [ -d $source_path ]; then
-		ln -s $source_path $target_path
+		echo "TODO"
 	else
-		mkdir $target_path
-		let file_name=${source_path##*/}
-		ln -s $source_path $target_path/$file_name
+		echo "TODO"
 	fi
 done

@@ -2,6 +2,7 @@
 
 - [ ] This
 	- [ ] Put configs in this folder and make the output locations symlink to here: this allows the files to be tracked by git
+	- [ ] script that parses all output locations and removes any dead symlinks
 - [ ] Polybar
 	- [ ] colors!
 	- [ ] better/different icon fonts
