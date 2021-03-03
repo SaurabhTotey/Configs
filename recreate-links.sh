@@ -7,8 +7,7 @@ do
 	target_path=${target_path/#~/$HOME}
 	cd configs/$name
 	for file_to_symlink in *; do
-		echo $file_to_symlink
-		#TODO: actually create the symlink
+		ln -sf "$(pwd)/$file_to_symlink" $target_path
 	done
 	cd ../..
 done

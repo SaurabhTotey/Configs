@@ -1,7 +1,7 @@
 ## TODO
 
 - [ ] This
-	- [ ] Put configs in this folder and make the output locations symlink to here: this allows the files to be tracked by git
+	- [ ] fix permission denied for /usr/local/bin linking and services linking
 	- [ ] script that parses all output locations and removes any dead symlinks
 - [ ] Polybar
 	- [ ] colors!
