@@ -135,19 +135,19 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_autoclose_preview_window_after_insertion=1
 
-"Airline integration with YCM and stop airline for yelling about mixed indentation when using spaces for alignment
+"Stop airline for yelling about mixed indentation when using spaces for alignment
 let g:airline#extensions#c_like_langs=['arduino', 'c', 'cpp', 'cuda', 'd', 'glsl', 'go', 'java', 'javascript', 'kotlin', 'ld', 'php', 'rust', 'scala']
 let g:airline#extensions#whitespace#mixed_indent_algo=1
+
+"Enable airline integration with other plugins
+let g:airline#extensions#fugitive#enabled=1
+let g:airline#extensions#fzf#enabled=1
+let g:airline#extensions#syntastic#enabled=1
 let g:airline#extensions#ycm#enabled=1
 
 "Allow vim-tmux-navigator to work from the NERDTree pane
 let g:NERDTreeMapJumpNextSibling='<Nop>'
 let g:NERDTreeMapJumpPrevSibling='<Nop>'
-
-"Add syntastic stuff to the status line
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 "Detect Syntastic errors on startup or save (but not exist) and put them in the error window, which opens when there are errors and closes when there aren't
 let g:syntastic_always_populate_loc_list=1
