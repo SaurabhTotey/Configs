@@ -1,0 +1,11 @@
+[Unit]
+Description=Delete history of current user
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/delete-history
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target

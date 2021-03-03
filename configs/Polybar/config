@@ -1,0 +1,154 @@
+; note that colors are specified as ARGB rather than RGBA
+; TODO: USE MORE COLORS, ESPECIALLY AS STATUS INDICATORS
+[variables]
+MAIN_BACKGROUND = #80000000
+MAIN_COLOR = #FFF
+BAR_SIZE = 10
+BAR_FG_0 = #55aa55
+BAR_FG_1 = #557755
+BAR_FG_2 = #f5a70a
+BAR_FG_3 = #ff5555
+BAR_EMPTY = #444444
+
+[bar/default]
+bottom = true
+height = 3.5%
+width = 100%
+background = ${variables.MAIN_BACKGROUND}
+foreground = ${variables.MAIN_COLOR}
+padding = 2
+module-margin = 4
+module-margin-center = 0
+tray-position = right
+tray-maxsize = 32
+tray-padding = 5
+modules-left = time date weather workspaces
+modules-center = music-previous volume music music-next
+modules-right = network cpu memory temperature
+font-0 = "noto sans"
+font-1 = "unifont"
+font-2 = "Font Awesome 5 Brands Regular:style=Regular"
+font-3 = "Font Awesome 5 Free Solid:style=Solid"
+font-4 = "Font Awesome 5 Free Regular:style=Regular"
+font-5 = "Weather Icons"
+
+[settings]
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+
+[module/xmonad]
+type = custom/script
+exec = xmonad-log
+tail = true
+
+[module/time]
+type = internal/date
+time = %H : %M : %S
+label = %time%
+format =  <label>
+
+[module/date]
+type = internal/date
+date = %A, %B %d, %Y
+label =  %date%
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/openweathermap-fullfeatured.sh
+interval = 600
+label-font = 6
+
+[module/network]
+type = internal/network
+interface = eno2
+label-connected = %upspeed%  %downspeed% 
+label-disconnected = %{F#ff0000}DISCONNECTED
+format-disconnected =  <label-disconnected>
+format-connected =  <label-connected>
+
+[module/cpu]
+type = internal/cpu
+label = %percentage%
+format =  <label>% <bar-load>
+bar-load-indicator =
+bar-load-width = ${variables.BAR_SIZE}
+bar-load-foreground-0 = ${variables.BAR_FG_0}
+bar-load-foreground-1 = ${variables.BAR_FG_1}
+bar-load-foreground-2 = ${variables.BAR_FG_2}
+bar-load-foreground-3 = ${variables.BAR_FG_3}
+bar-load-fill = ▐
+bar-load-empty = ▐
+bar-load-empty-foreground = ${variables.BAR_EMPTY}
+
+
+[module/memory]
+type = internal/memory
+label = %percentage_used%
+format =  <label>% <bar-used>
+bar-used-indicator =
+bar-used-width = ${variables.BAR_SIZE}
+bar-used-foreground-0 = ${variables.BAR_FG_0}
+bar-used-foreground-1 = ${variables.BAR_FG_1}
+bar-used-foreground-2 = ${variables.BAR_FG_2}
+bar-used-foreground-3 = ${variables.BAR_FG_3}
+bar-used-fill = ▐
+bar-used-empty = ▐
+bar-used-empty-foreground = ${variables.BAR_EMPTY}
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 1 ; this is the CPU for me
+base-temperature = 20
+label = %temperature-c%
+format = <ramp> <label>
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+[module/workspaces]
+type = internal/xworkspaces
+icon-0 = main;
+icon-1 = social;
+icon-2 = development;
+icon-3 = scratch-1;
+icon-4 = scratch-2;
+label-active = %icon% %name%
+label-urgent = %icon%
+label-occupied = %icon%
+label-empty = %icon%
+label-active-foreground = #0000ff
+label-active-padding = 2
+label-urgent-padding = 2
+label-occupied-padding = 2
+label-empty-padding = 2
+
+[module/volume]
+type = internal/pulseaudio
+use-ui-max = false
+label-muted =  %{F#ff0000}%percentage%%
+format-muted = <label-muted>
+format-volume = <ramp-volume> <label-volume>
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/music-previous]
+type = custom/text
+content = 
+click-left = playerctl previous --ignore-player=firefox
+
+[module/music-next]
+type = custom/text
+content = 
+click-left = playerctl next --ignore-player=firefox
+
+[module/music]
+type = custom/script
+exec = ~/.config/polybar/player-mpris-tail.py -f '{icon-reversed}   {:artist:t20:{artist}:}  -  {:t20:{title}:}' -b firefox
+tail = true
+click-left = playerctl play-pause --ignore-player=firefox

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rm -rf ~/.bash_history
+rm -rf ~/.python_history
