@@ -149,7 +149,7 @@ let g:airline#extensions#ycm#enabled=1
 let g:NERDTreeMapJumpNextSibling='<Nop>'
 let g:NERDTreeMapJumpPrevSibling='<Nop>'
 
-"Detect Syntastic errors on startup or save (but not exist) and put them in the error window, which opens when there are errors and closes when there aren't
+"Detect Syntastic errors on startup or save (but not exit) and put them in the error window, which opens when there are errors and closes when there aren't
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
