@@ -35,7 +35,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set backspace=2
-let g:rust_recommended_style=0 
+let g:rust_recommended_style=0
 let g:python_recommended_style=0
 
 "Use relative line numberings for easier movement
@@ -143,6 +143,17 @@ let g:airline#extensions#ycm#enabled=1
 "Allow vim-tmux-navigator to work from the NERDTree pane
 let g:NERDTreeMapJumpNextSibling='<Nop>'
 let g:NERDTreeMapJumpPrevSibling='<Nop>'
+
+"Add syntastic stuff to the status line
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"Detect Syntastic errors on startup or save (but not exist) and put them in the error window, which opens when there are errors and closes when there aren't
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
 
 "Makes keybindings for common YCM commands
 command! F :YcmCompleter FixIt
