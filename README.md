@@ -23,4 +23,4 @@
 - [ ] Investigate dunst
 - [ ] Investigate MuPDF as PDF viewer
 - [ ] 'Finalize' fonts and colors (especially for terminal)
-- [ ] Upload setup to Github (configs, programs, scripts, organization structure, etc)
+- [ ] Pics
