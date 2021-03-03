@@ -1,5 +1,5 @@
 [Unit]
-Description=Delete history of current user
+Description=delete user history on shutdown
 Before=shutdown.target
 
 [Service]
