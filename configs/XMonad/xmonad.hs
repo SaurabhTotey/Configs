@@ -13,7 +13,7 @@ defaultStartupHook = do
 	spawnOnOnce "social" "discord"
 	spawnOnOnce "social" "spotify"
 	spawnOnOnce "social" "slack"
-	spawnOnce "pkill polybar; polybar -r default &"
+	spawnOnce "polybar -r default &"
 
 main = do
 	xmonad $ docks $ ewmh def
@@ -31,7 +31,7 @@ main = do
 			((0, xF86XK_AudioLowerVolume), spawn "pactl set-sink-mute @DEFAULT_SINK@ false;pactl set-sink-volume @DEFAULT_SINK@ -5% &"),
 			((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-mute @DEFAULT_SINK@ false;pactl set-sink-volume @DEFAULT_SINK@ +5% &"),
 			((0, xF86XK_AudioMute), spawn "amixer set Master toggle &"),
-			((0, xF86XK_AudioPlay), spawn "playerctl play-pause --ignore-player=firefox &"),
-			((0, xF86XK_AudioNext), spawn "playerctl next --ignore-player=firefox &"),
-			((0, xF86XK_AudioPrev), spawn "playerctl previous --ignore-player=firefox &")
+			((0, xF86XK_AudioPlay), spawn "playerctl play-pause --ignore-player=firefox"),
+			((0, xF86XK_AudioNext), spawn "playerctl next --ignore-player=firefox"),
+			((0, xF86XK_AudioPrev), spawn "playerctl previous --ignore-player=firefox")
 		]

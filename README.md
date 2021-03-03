@@ -1,7 +1,6 @@
 ## TODO
 
 - [ ] This
-	- [ ] fix permission denied for /usr/local/bin linking and services linking
 	- [ ] script that parses all output locations and removes any dead symlinks
 - [ ] Polybar
 	- [ ] colors!
