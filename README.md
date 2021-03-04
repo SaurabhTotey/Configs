@@ -2,6 +2,7 @@
 
 - [ ] This
 	- [ ] script that parses all output locations and removes any dead symlinks
+	- [ ] script to automatically enable and start services
 - [ ] Polybar
 	- [ ] colors!
 	- [ ] better/different icon fonts
@@ -15,8 +16,6 @@
 	- [ ] allow pinning media between workspaces
 	- [ ] figure out tabbed windows and maybe make the one-window layout put everything in tabs
 	- [ ] force all zoom windows to be in one tabbed setup rather than mucking everything with a million windows
-- [ ] NVim
-	- [ ] fix NVIM from thinking fragment shaders are filled with errors
 - [ ] Investigate launcher
 	- [ ] ulauncher
 	- [ ] rofi

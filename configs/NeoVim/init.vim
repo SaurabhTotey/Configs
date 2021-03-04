@@ -139,6 +139,9 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 let g:airline#extensions#c_like_langs=['arduino', 'c', 'cpp', 'cuda', 'd', 'glsl', 'go', 'java', 'javascript', 'kotlin', 'ld', 'php', 'rust', 'scala']
 let g:airline#extensions#whitespace#mixed_indent_algo=1
 
+"Fix detection for shaders: .frag files are being interpretted as JavaScript for some reason
+autocmd! BufNewFile,BufRead *.vert,*.tesc,*.tese,*.glsl,*.geom,*.frag,*.comp set filetype=glsl
+
 "Enable airline integration with other plugins
 let g:airline#extensions#fugitive#enabled=1
 let g:airline#extensions#fzf#enabled=1
