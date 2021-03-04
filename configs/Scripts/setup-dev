@@ -1,0 +1,6 @@
+#!/bin/bash
+
+tmux new-session -d -x "$(tput cols)" -y "$(tput lines)" -n editor "nvim ."
+tmux split-window -dv -p 10
+tmux new-window -n bash -d
+tmux attach-session
