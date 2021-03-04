@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Recording for 2 seconds!"
+arecord --duration=2 --format=dat /tmp/micTest.wav
+echo "Playing back the recording!"
+aplay /tmp/micTest.wav
+rm -rf /tmp/micTest.wav
+echo "Done!"
