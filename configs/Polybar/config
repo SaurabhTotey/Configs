@@ -39,11 +39,6 @@ compositing-overline = over
 compositing-underline = over
 compositing-border = over
 
-[module/xmonad]
-type = custom/script
-exec = xmonad-log
-tail = true
-
 [module/time]
 type = internal/date
 time = %H : %M : %S

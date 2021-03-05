@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO: allow optional arg of directory to be passed in
+
 tmux new-session -d -x "$(tput cols)" -y "$(tput lines)" -n editor "nvim ."
 tmux split-window -dv -p 20
 tmux new-window -n bash -d
