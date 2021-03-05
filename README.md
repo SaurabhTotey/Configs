@@ -2,7 +2,7 @@
 
 - [ ] This
 	- [ ] script that parses all output locations and removes any dead symlinks
-	- [ ] script to automatically enable and start services
+	- [ ] allow optional script field in modules.json that will 'enable' the config when linked or something (e.g. recompile xmonad or enable/start services, etc.)
 - [ ] Polybar
 	- [ ] colors!
 	- [ ] better/different icon fonts
