@@ -1,6 +1,18 @@
 #!/bin/bash
 
-# TODO: allow optional arg of directory to be passed in
+if [ $# -ge 2 ]; then
+	echo "$(basename "$0") will setup in the current directory if nothing is passed in, or in the passed in directory."
+	exit
+fi
+
+if [ $# -eq 1 ]; then
+	if [ -d "$1" ]; then
+		cd "$1" || exit
+	else
+		echo "Supplied directory is invalid."
+		exit
+	fi
+fi
 
 tmux new-session -d -x "$(tput cols)" -y "$(tput lines)" -n editor "nvim ."
 tmux split-window -dv -p 20
