@@ -8,7 +8,7 @@ import XMonad.Util.EZConfig
 import XMonad.Util.SpawnOnce
 import Graphics.X11.ExtraTypes.XF86
 
-defaultStartupHook = do
+myStartupHook = do
 	spawnOnOnce "main" "firefox"
 	spawnOnOnce "social" "discord"
 	spawnOnOnce "social" "spotify"
@@ -22,9 +22,9 @@ main = do
 			borderWidth = 0,
 			workspaces = ["main", "social", "development", "scratch-1", "scratch-2"],
 			layoutHook = avoidStruts $ spacingRaw True (Border 8 8 8 8) True (Border 8 8 8 8) True $ layoutHook def,
-			manageHook = manageHook def <+> manageDocks,
+			manageHook = manageSpawn <+> manageHook def <+> manageDocks,
 			handleEventHook = handleEventHook def <+> fullscreenEventHook,
-			startupHook = startupHook def <+> defaultStartupHook
+			startupHook = startupHook def <+> myStartupHook
 		}
 		`additionalKeys`
 		[
