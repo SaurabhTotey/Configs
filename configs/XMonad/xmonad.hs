@@ -1,9 +1,10 @@
 import XMonad
 import XMonad.Actions.SpawnOn
-import XMonad.Config.Desktop
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
+import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Spacing
+import XMonad.Layout.ThreeColumns
 import XMonad.Util.EZConfig
 import XMonad.Util.SpawnOnce
 import Graphics.X11.ExtraTypes.XF86
@@ -15,13 +16,20 @@ myStartupHook = do
 	spawnOnOnce "social" "slack"
 	spawnOnce "polybar -r default"
 
+myLayouts = onWorkspace "social" mySocialLayout myDefaultLayout
+	where
+		myDefaultLayout = tiledLayout ||| Mirror tiledLayout ||| Full
+		mySocialLayout = threeColumnLayout ||| myDefaultLayout
+		tiledLayout = Tall 1 (3/100) (1/2)
+		threeColumnLayout = ThreeColMid 1 (5/100) (1/2)
+
 main = do
 	xmonad $ docks $ ewmh def
 		{
 			terminal = "alacritty",
 			borderWidth = 0,
 			workspaces = ["main", "social", "development", "scratch-1", "scratch-2"],
-			layoutHook = avoidStruts $ spacingRaw True (Border 8 8 8 8) True (Border 8 8 8 8) True $ layoutHook def,
+			layoutHook = avoidStruts $ spacingRaw True (Border 8 8 8 8) True (Border 8 8 8 8) True $ myLayouts,
 			manageHook = manageSpawn <+> manageHook def <+> manageDocks,
 			handleEventHook = handleEventHook def <+> fullscreenEventHook,
 			startupHook = startupHook def <+> myStartupHook
