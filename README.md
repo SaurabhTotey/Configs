@@ -10,7 +10,7 @@
 - [ ] XMonad
 	- [ ] default programs (e.g. firefox on 1, spotify + discord + slack on 2, lightscreen + zoom + other bg utils)
 	- [ ] switch to main workspace on startup
-	- [ ] workspace settings (workspace icons, always keep firefox on left in workspace 1, use 3-column for workspace 2)
+	- [ ] workspace settings (workspace icons, always keep firefox on left in workspace 1)
 	- [ ] allow tabbed windows on any workspace
 	- [ ] better way of showing selected window (blue or green bottom tab border seems like a good idea when window is not only window on workspace)
 	- [ ] disable mouse
