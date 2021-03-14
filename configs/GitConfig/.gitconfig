@@ -3,3 +3,5 @@
 	name = Saurabh Totey
 [init]
 	defaultBranch = main
+[credential]
+	helper = cache
