@@ -2,7 +2,7 @@
 
 - [ ] This
 	- [ ] script that parses all output locations and removes any dead symlinks
-	- [ ] allow optional script field in modules.json that will 'enable' the config when linked or something (e.g. recompile xmonad or enable/start services, etc.)
+	- [ ] allow optional script field in modules.json that will 'enable' the config when linked or something (e.g. recompile xmonad, enable/start services, source bashrc, etc.)
 - [ ] Polybar
 	- [ ] colors!
 	- [ ] better/different icon fonts
@@ -21,6 +21,8 @@
 	- [ ] ulauncher
 	- [ ] rofi
 - [ ] Investigate dunst
-- [ ] Investigate MuPDF as PDF viewer
+- [ ] Investigate PDF viewer
+	- [ ] MuPDF
+	- [ ] Zathura
 - [ ] 'Finalize' fonts and colors (especially for terminal)
 - [ ] Pics

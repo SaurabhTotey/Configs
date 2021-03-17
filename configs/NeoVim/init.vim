@@ -7,6 +7,7 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'simnalamburt/vim-mundo'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'chaoren/vim-wordmotion'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

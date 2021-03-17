@@ -9,3 +9,5 @@ export EDITOR=nvim
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
+
+alias confs='setup-dev ~/Development/Configs'
