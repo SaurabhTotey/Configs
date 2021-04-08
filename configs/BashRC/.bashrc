@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export HISTFILE=/tmp/.bash_history
 export EDITOR=nvim
 
 alias ls='ls --color=auto'

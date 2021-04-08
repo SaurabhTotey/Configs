@@ -1,4 +1,3 @@
 #!/bin/bash
 
-rm -rf /home/*/.bash_history
 rm -rf /home/*/.python_history

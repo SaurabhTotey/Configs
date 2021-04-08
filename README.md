@@ -8,6 +8,8 @@
 	- [ ] better/different icon fonts
 	- [ ] better play-pause/media controls and spacing and stuff (remove python dependency)
 - [ ] XMonad
+	- [ ] remove dependence on "default" config so that everything is in my config and nothing more or less
+	- [ ] make new terminals grab focus when created
 	- [ ] default programs (e.g. firefox on 1, spotify + discord + slack on 2, lightscreen + zoom + other bg utils)
 	- [ ] switch to main workspace on startup
 	- [ ] workspace settings (workspace icons, always keep firefox on left in workspace 1)
