@@ -9,6 +9,7 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'chaoren/vim-wordmotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'sheerun/vim-polyglot'
@@ -17,8 +18,10 @@ Plug 'valloric/youcompleteme'
 Plug 'vim-airline/vim-airline'
 Plug 'joshdick/onedark.vim'
 Plug 'luochen1990/rainbow'
+Plug 'andymass/vim-matchup'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 "Everything should be done in UTF8
@@ -38,6 +41,7 @@ set shiftwidth=4
 set backspace=2
 let g:rust_recommended_style=0
 let g:python_recommended_style=0
+let g:scala_recommended_style=0
 
 "Use relative line numberings for easier movement
 set relativenumber
@@ -126,6 +130,10 @@ let g:rainbow_active=1
 
 "Keep the NERDTree preview a certain size
 let g:NERDTreeWinSize=40
+
+"Show relative line numbers in the NERDTree pane
+let NERDTreeShowLineNumbers=1
+autocmd FileType nerdtree setlocal relativenumber
 
 "Open NERDTree when no arguments are specified or a directory argument is given
 autocmd StdinReadPre * let s:std_in=1
