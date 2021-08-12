@@ -1,13 +1,10 @@
-{-# LANGUAGE MultiParamTypeClasses, FlexibleInstances #-}
 import XMonad
 import XMonad.Actions.SpawnOn
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
-import XMonad.Layout.Decoration
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.Spacing
-import XMonad.StackSet (integrate)
 import XMonad.Util.EZConfig
 import XMonad.Util.SpawnOnce
 import Graphics.X11.ExtraTypes.XF86
@@ -20,34 +17,10 @@ myStartupHook = do
 	spawnOnOnce "social" "slack"
 	spawnOnce "polybar -r default"
 
-data SideDecoration a = SideDecoration Direction2D deriving (Show, Read)
-instance Eq a => DecorationStyle SideDecoration a where
-
-	shrink b (Rectangle _ _ dw dh) (Rectangle x y w h)
-		| SideDecoration U <- b = Rectangle x (y + fi dh) w (h - dh)
-		| SideDecoration R <- b = Rectangle x y (w - dw) h
-		| SideDecoration D <- b = Rectangle x y w (h - dh)
-		| SideDecoration L <- b = Rectangle (x + fi dw) y (w - dw) h
-
-	pureDecoration b dw dh _ st _ (win, Rectangle x y w h)
-		| win `elem` integrate st && dw < w && dh < h = Just $ case b of
-			SideDecoration U -> Rectangle x y w dh
-			SideDecoration R -> Rectangle (x + fi (w - dw)) y dw h
-			SideDecoration D -> Rectangle x (y + fi (h - dh)) w dh
-			SideDecoration L -> Rectangle x y dw h
-		| otherwise = Nothing
-
-myTheme = defaultTheme
-	{
-		activeColor = "#ffffff",
-		inactiveColor = "#000000"
-	}
-
 myLayouts = myDefaultLayouts
 	where
-		myDefaultLayouts = myDecorate tiledLayout ||| myDecorate (Mirror tiledLayout) ||| Full
+		myDefaultLayouts = tiledLayout ||| Mirror tiledLayout ||| Full
 		tiledLayout = ResizableTall 1 (5/100) (1/2) []
-		myDecorate = decoration shrinkText myTheme (SideDecoration D)
 
 myManageHook = manageSpawn <+> manageHook def <+> manageDocks <+> (fmap not isDialog --> doF avoidMaster)
 	where
