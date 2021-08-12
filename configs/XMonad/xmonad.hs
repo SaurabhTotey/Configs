@@ -5,6 +5,7 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.Decoration
+import XMonad.Layout.ResizableTile
 import XMonad.Layout.Spacing
 import XMonad.StackSet (integrate)
 import XMonad.Util.EZConfig
@@ -20,7 +21,6 @@ myStartupHook = do
 	spawnOnce "polybar -r default"
 
 data SideDecoration a = SideDecoration Direction2D deriving (Show, Read)
-
 instance Eq a => DecorationStyle SideDecoration a where
 
 	shrink b (Rectangle _ _ dw dh) (Rectangle x y w h)
@@ -37,10 +37,17 @@ instance Eq a => DecorationStyle SideDecoration a where
 			SideDecoration L -> Rectangle x y dw h
 		| otherwise = Nothing
 
+myTheme = defaultTheme
+	{
+		activeColor = "#ffffff",
+		inactiveColor = "#000000"
+	}
+
 myLayouts = myDefaultLayouts
 	where
-		myDefaultLayouts = tiledLayout ||| Mirror tiledLayout ||| Full
-		tiledLayout = Tall 1 (5/100) (1/2)
+		myDefaultLayouts = myDecorate tiledLayout ||| myDecorate (Mirror tiledLayout) ||| Full
+		tiledLayout = ResizableTall 1 (5/100) (1/2) []
+		myDecorate = decoration shrinkText myTheme (SideDecoration D)
 
 myManageHook = manageSpawn <+> manageHook def <+> manageDocks <+> (fmap not isDialog --> doF avoidMaster)
 	where
