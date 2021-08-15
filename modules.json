@@ -41,6 +41,6 @@
 	},
 	{
 		"name": "Services",
-		"path": "/etc/systemd/system/"
+		"path": "~/.config/systemd/user/"
 	}
 ]
