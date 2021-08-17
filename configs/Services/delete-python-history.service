@@ -1,0 +1,10 @@
+[Unit]
+Description=delete ~/.python_history on shtudown
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStop=rm %h/.python_history
+
+[Install]
+WantedBy=default.target
