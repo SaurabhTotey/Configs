@@ -1,11 +1,13 @@
 [
 	{
 		"name": "XMonad",
-		"path": "~/.xmonad/"
+		"path": "~/.xmonad/",
+		"setup-command": "xmonad --recompile"
 	},
 	{
 		"name": "Polybar",
-		"path": "~/.config/polybar/"
+		"path": "~/.config/polybar/",
+		"setup-command": "echo cmd:restart | tee /tmp/polybar_mqueue.* > /dev/null"
 	},
 	{
 		"name": "NeoVim",
@@ -41,6 +43,7 @@
 	},
 	{
 		"name": "Services",
-		"path": "~/.config/systemd/user/"
+		"path": "~/.config/systemd/user/",
+		"setup-command": "echo 'TODO: enable/start all services in configs/Services, and make sure to use the --user flag'"
 	}
 ]
