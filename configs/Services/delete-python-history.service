@@ -4,7 +4,7 @@ Description=delete ~/.python_history on shtudown
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStop=rm %h/.python_history
+ExecStop=rm %h/.python_history;rm %h/.ipython/profile_default/history.sqlite
 
 [Install]
 WantedBy=default.target

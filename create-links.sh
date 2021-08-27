@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for module in $(jq -c '.[]' modules.json); do
+jq -c '.[]' modules.json | while IFS='' read -r module;do
 	name=$(echo "$module" | jq -r '.name')
 	target_path=$(echo "$module" | jq -r '.path')
 	target_path=${target_path/#~/$HOME}
