@@ -173,3 +173,7 @@ command! -nargs=1 R :YcmCompleter RefactorRename <args>
 command! G :YcmCompleter GoTo
 command! T :YcmCompleter GetType
 command! D :YcmCompleter GetDoc
+
+" Makes a command to copy an entire file into the clipboard
+" gg goes to the first line, 0 goes to the beginning of the line, v sets visual mode, G goes to the last line, $ goes to the end of the line, and "+y yanks into +
+command! CA :norm gg0vG$"+y
