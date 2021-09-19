@@ -47,5 +47,6 @@ main = do
 			((0, xF86XK_AudioMute), spawn "amixer set Master toggle"),
 			((0, xF86XK_AudioPlay), spawn "playerctl play-pause --player=spotify,%any play"),
 			((0, xF86XK_AudioNext), spawn "playerctl next --player=spotify,%any play"),
-			((0, xF86XK_AudioPrev), spawn "playerctl previous --player=spotify,%any play")
+			((0, xF86XK_AudioPrev), spawn "playerctl previous --player=spotify,%any play"),
+			((mod1Mask, xK_Super_L), spawn "echo cmd:restart | tee /tmp/polybar_mqueue.* > /dev/null")
 		]
