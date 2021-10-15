@@ -1,0 +1,10 @@
+#!/bin/bash
+
+printf "Below are the output devices.\n"
+pactl list short sinks
+
+printf "\nThe first column has the ID. Please input the ID of the device you'd like to use as the new output.\n"
+printf "ID: "
+read -r id
+
+pacmd set-default-sink "$id"
