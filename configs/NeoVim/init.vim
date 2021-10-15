@@ -91,6 +91,9 @@ set listchars=tab:▸\ ,eol:¬\,trail:⎵\,extends:→\,precedes:←
 "Exclude the trailing newline when using $ to select to the end of the line
 vnoremap $ $h
 
+"Made capital Y copy to the end of the line rather than the whole line (yy can copy the whole line)
+nnoremap Y y$
+
 "Syntax highlighting
 syntax on
 

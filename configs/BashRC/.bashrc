@@ -8,7 +8,7 @@
 export HISTFILE=/tmp/.bash_history
 export EDITOR=nvim
 
-alias ls='ls --color=auto'
+alias ls='exa \-la \-\-header \-\-sort=type'
 PS1='[\u@\h \W]\$ '
 
 alias confs='setup-dev ~/Development/Configs'

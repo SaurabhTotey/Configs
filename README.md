@@ -3,6 +3,7 @@
 - [ ] This
 	- [ ] script that parses all output locations and removes any dead symlinks
 	- [ ] allow optional script field in modules.json that will 'enable' the config when linked or something (e.g. recompile xmonad, enable/start services, source bashrc, etc.)
+- [ ] trash-cli
 - [ ] Polybar
 	- [ ] colors!
 	- [ ] better/different icon fonts
