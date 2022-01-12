@@ -59,8 +59,8 @@ label-font = 6
 
 [module/network]
 type = internal/network
-interface = wlan0
-; interface = eno2
+; interface = wlan0
+interface = eno2
 label-connected = %upspeed%  %downspeed% 
 label-disconnected = %{F#ff0000}DISCONNECTED
 format-disconnected =  <label-disconnected>
@@ -146,6 +146,6 @@ click-left = playerctl next --player=spotify,%any play
 
 [module/music]
 type = custom/script
-exec = ~/.config/polybar/player-mpris-tail.py -f '{icon-reversed}   {:artist:t20:{artist}:}  -  {:t20:{title}:}' -b firefox
+exec = ~/.config/polybar/player-mpris-tail.py -f '{icon-reversed}   {:artist:t20:{artist}:}  -  {:t45:{title}:}' -b firefox
 tail = true
 click-left = playerctl play-pause --player=spotify,%any play
