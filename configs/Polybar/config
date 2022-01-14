@@ -1,5 +1,4 @@
-; note that colors are specified as ARGB rather than RGBA
-; TODO: USE MORE COLORS, ESPECIALLY AS STATUS INDICATORS
+; TODO: Figure out how to best manage colors
 [variables]
 MAIN_BACKGROUND = #80000000
 MAIN_COLOR = #FFF
@@ -43,13 +42,14 @@ compositing-border = over
 [module/time]
 type = internal/date
 time = %H : %M : %S
-label = %time%
-format =  <label>
+label =  %time%
+label-foreground = #ffd500
 
 [module/date]
 type = internal/date
 date = %A, %B %d, %Y
 label =  %date%
+label-foreground = #ffd500
 
 [module/weather]
 type = custom/script
@@ -109,16 +109,18 @@ ramp-4 = 
 
 [module/workspaces]
 type = internal/xworkspaces
-icon-0 = main;
-icon-1 = social;
-icon-2 = development;
-icon-3 = scratch-1;
-icon-4 = scratch-2;
+icon-0 = Main;
+icon-1 = Social;
+icon-2 = Development;
+icon-3 = Scratch-1;
+icon-4 = Scratch-2;
 label-active = %icon% %name%
 label-urgent = %icon%
 label-occupied = %icon%
 label-empty = %icon%
-label-active-foreground = #0000ff
+label-occupied-foreground = #74d2ff
+label-active-foreground = #ff748c
+label-empty-foreground = #74ffa2
 label-active-padding = 2
 label-urgent-padding = 2
 label-occupied-padding = 2
@@ -146,6 +148,6 @@ click-left = playerctl next --player=spotify,%any play
 
 [module/music]
 type = custom/script
-exec = ~/.config/polybar/player-mpris-tail.py -f '%{F#1DB954}{icon-reversed}   {:artist:t20:{artist}:}  -  {:t45:{title}:}' -b firefox
+exec = ~/.config/polybar/player-mpris-tail.py -f '{icon-reversed}%{F#1DB954}   {:artist:t20:{artist}:}  -  {:t45:{title}:}' -b firefox
 tail = true
 click-left = playerctl play-pause --player=spotify,%any play

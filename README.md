@@ -4,9 +4,10 @@
 	- [ ] script that parses all output locations and removes any dead symlinks
 	- [ ] allow optional script field in modules.json that will 'enable' the config when linked or something (e.g. recompile xmonad, enable/start services, source bashrc, etc.)
 - [ ] Polybar
-	- [ ] colors!
 	- [ ] better/different icon fonts
-	- [ ] better play-pause/media controls and spacing and stuff (remove python dependency)
+	- [ ] rewrite external scripts
+		- [ ] better play-pause/media controls and spacing and stuff
+		- [ ] more sensible weather display
 - [ ] XMonad
 	- [ ] remove dependence on "default" config so that everything is in my config and nothing more or less
 	- [ ] make new terminals grab focus when created

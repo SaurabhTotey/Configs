@@ -34,7 +34,7 @@ main = do
 		{
 			terminal = "alacritty",
 			borderWidth = 0,
-			workspaces = ["main", "social", "development", "scratch-1", "scratch-2"],
+			workspaces = ["Main", "Social", "Development", "Scratch-1", "Scratch-2"],
 			layoutHook = avoidStruts $ spacingRaw True (Border 8 8 8 8) True (Border 8 8 8 8) True $ myLayouts,
 			manageHook = myManageHook,
 			handleEventHook = handleEventHook def <+> fullscreenEventHook,
