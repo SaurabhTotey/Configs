@@ -61,7 +61,7 @@ label-font = 6
 type = internal/network
 ; interface = wlan0
 interface = eno2
-label-connected = %upspeed%  %downspeed% 
+label-connected = %{F#ffa630}%upspeed%  %{F#00a7e1}%downspeed% 
 label-disconnected = %{F#ff0000}DISCONNECTED
 format-disconnected =  <label-disconnected>
 format-connected =  <label-connected>
@@ -127,9 +127,9 @@ label-empty-padding = 2
 [module/volume]
 type = internal/pulseaudio
 use-ui-max = false
-label-muted =  %{F#ff0000}%percentage%%
+label-muted = %{F#ff0000} %percentage%%
 format-muted = <label-muted>
-format-volume = <ramp-volume> <label-volume>
+format-volume = %{F#1DB954}<ramp-volume> <label-volume>
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
@@ -146,6 +146,6 @@ click-left = playerctl next --player=spotify,%any play
 
 [module/music]
 type = custom/script
-exec = ~/.config/polybar/player-mpris-tail.py -f '{icon-reversed}   {:artist:t20:{artist}:}  -  {:t45:{title}:}' -b firefox
+exec = ~/.config/polybar/player-mpris-tail.py -f '%{F#1DB954}{icon-reversed}   {:artist:t20:{artist}:}  -  {:t45:{title}:}' -b firefox
 tail = true
 click-left = playerctl play-pause --player=spotify,%any play
