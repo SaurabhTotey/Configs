@@ -1,0 +1,10 @@
+[Unit]
+Description=delete various history files on shtudown
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStop=rm %h/DOES_NOT_EXIST.txt %h/.python_history %h/.ipython/profile_default/history.sqlite %h/.lesshst
+
+[Install]
+WantedBy=default.target
