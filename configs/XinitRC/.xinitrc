@@ -33,7 +33,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # xrandr --output DP-0 --mode 2560x1440 --rate 144 &
-~/.fehbg &
+/usr/local/bin/custom_background &
 xsetroot -cursor_name left_ptr &
 picom &
 numlockx &

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd ~/Development/Custom-Background || exit
+cargo build --release
+sudo cp ./target/release/custom_background /usr/local/bin/custom_background
