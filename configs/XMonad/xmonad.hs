@@ -11,10 +11,10 @@ import Graphics.X11.ExtraTypes.XF86
 import qualified XMonad.StackSet as W
 
 myStartupHook = do
-	spawnOnOnce "main" "firefox"
-	spawnOnOnce "social" "discord"
-	spawnOnOnce "social" "spotify"
-	spawnOnOnce "social" "slack"
+	spawnOnOnce "Main" "firefox"
+	spawnOnOnce "Social" "discord"
+	spawnOnOnce "Social" "spotify"
+	spawnOnOnce "Social" "slack"
 	spawnOnce "polybar -r default"
 
 myLayouts = myDefaultLayouts
