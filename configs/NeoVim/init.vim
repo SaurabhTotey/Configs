@@ -45,6 +45,7 @@ let g:scala_recommended_style=0
 
 "Use relative line numberings for easier movement
 set relativenumber
+set number
 
 "Don't wrap long lines
 set nowrap
