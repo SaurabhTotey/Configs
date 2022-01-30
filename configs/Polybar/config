@@ -59,8 +59,8 @@ label-font = 6
 
 [module/network]
 type = internal/network
-; interface = wlan0
-interface = eno2
+interface = wlan0
+; interface = eno2
 label-connected = %{F#ffa630}%upspeed%  %{F#00a7e1}%downspeed% 
 label-disconnected = %{F#ff0000}DISCONNECTED
 format-disconnected =  <label-disconnected>

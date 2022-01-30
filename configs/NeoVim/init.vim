@@ -22,6 +22,8 @@ Plug 'andymass/vim-matchup'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'machakann/vim-highlightedyank'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/bufferline.nvim'
 call plug#end()
 
 "Everything should be done in UTF8
@@ -126,6 +128,22 @@ set termguicolors
 colorscheme onedark
 let g:airline_theme='onedark'
 
+"Enable tabs for buffers and ensure that the NERDTree is uninhibited
+lua << EOF
+require("bufferline").setup {
+	options = {
+		offsets = {
+			{
+				filetype = "nerdtree",
+				text = "Files",
+				highlight = "Directory",
+				text_align = "left"
+			}
+		}
+	}
+}
+EOF
+
 "Override background color to use transparency
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -141,8 +159,8 @@ autocmd FileType nerdtree setlocal relativenumber
 
 "Open NERDTree when no arguments are specified or a directory argument is given
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | wincmd p | q | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | q | endif
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | wincmd p | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 
 "Close the YouCompleteMe previews automatically
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -171,7 +189,10 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 
-"Makes keybindings for common YCM commands
+"Makes a command to close the current buffer without closing the split
+command! B :bp|sp|bn|bd|
+
+"Makes commands for common YCM commands
 command! F :YcmCompleter FixIt
 command! -nargs=1 R :YcmCompleter RefactorRename <args>
 command! G :YcmCompleter GoTo
